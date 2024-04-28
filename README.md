@@ -27,7 +27,7 @@ This script provides an Dialag Gui and a easy way to update Ubuntu packages, Fla
 
 1. Clone this repository `git clone https://github.com/Tibsun75/fgde-uup.git` or download the `fgde-uup.bash` script from the files section above.
 2. Make the script executable: `chmod +x fgde-uup.bash`
-3. Run the script: `./fgde-uupdbash`
+3. Run the script: `./fgde-uup.bash`
 
 ## Language Settings
 

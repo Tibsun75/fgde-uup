@@ -35,4 +35,4 @@ The script supports multiple languages. By default, it uses German language.
 You can also override the language setting using the `-l` option followed by the language code (`de`, `en`, `tr`). 
 
 For example:
-./fgde-uup.bash -l de
+`./fgde-uup.bash -l de`

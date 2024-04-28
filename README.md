@@ -1,5 +1,7 @@
 # Fast Guides DE Ubuntu Updater
 
+https://github.com/Tibsun75/fgde-uup/blob/main/fgde-uup.png
+
 This script provides an Dialag Gui and a easy way to update Ubuntu packages, Flatpaks, and Snap packages.
 
 ## Features

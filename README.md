@@ -1,4 +1,5 @@
 # Fast Guides DE Ubuntu Updater
+![fgde-uup logo](https://github.com/Tibsun75/fgde-uup/blob/main/fgde-uup.png)
 
 https://github.com/Tibsun75/fgde-uup/blob/main/fgde-uup.png
 

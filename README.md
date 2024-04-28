@@ -14,6 +14,7 @@ This script provides an Dialag Gui and a easy way to update Ubuntu packages, Fla
 - Empty Ubuntu deb cache
 - Empty Flatpak cache
 - Empty Snap cache
+- English, German and Turkish Language Support
 
 ## Requirements
 

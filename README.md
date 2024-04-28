@@ -34,5 +34,5 @@ This script provides an Dialag Gui and a easy way to update Ubuntu packages, Fla
 The script supports multiple languages. By default, it uses German language. 
 You can also override the language setting using the `-l` option followed by the language code (`de`, `en`, `tr`). 
 
-For example:
-`./fgde-uup.bash -l de`
+For example, start in english:
+`./fgde-uup.bash -l en`

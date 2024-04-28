@@ -97,27 +97,27 @@ show_menu() {
     elif [ "$LANGUAGE" = "en" ]; then
         menu_title="Ubuntu Update Menu"
         menu_options=("1" "Update deb Ubuntu packages"
-                       "2" "Update Flatpaks"
-                       "3" "Update Snap packages"
-					   "4" "Update all"
-					   "5" "autoremove unnecessary deb packages with apt autoremove"
-					   "6" "repair deb packages"
-					   "7" "empty Ubuntu deb cache"
-                       "8" "empty Flatpak cache"
-                       "9" "empty Snap cache"
-                       "10" "Exit")
+                       	"2" "Update Flatpaks"
+                       	"3" "Update Snap packages"
+			"4" "Update all"
+			"5" "autoremove unnecessary deb packages with apt autoremove"
+			"6" "repair deb packages"
+			"7" "empty Ubuntu deb cache"
+                       	"8" "empty Flatpak cache"
+                       	"9" "empty Snap cache"
+                       	"10" "Exit")
     elif [ "$LANGUAGE" = "tr" ]; then
         menu_title="Ubuntu günceleme menü"
         menu_options=("1" "Ubuntu deb paketlerini güncelle"
-                       "2" "Flatpakları güncelle"
-                       "3" "Snap paketlerini güncelle"
-                       "4" "Hepsini güncelle"
-                       "5" "Gereksiz deb paketleri kaldır : apt autoremove "
-	                   "6" "Ubuntu deb paket hataları kaldır"
-                       "7" "Ubuntu deb cache kaldır"
-                       "8" "Flatpak cache kaldır"
-                       "9" "Snap Cache kaldır"
-                       "6" "Çıkış")
+                       	"2" "Flatpakları güncelle"
+                       	"3" "Snap paketlerini güncelle"
+                       	"4" "Hepsini güncelle"
+                       	"5" "Gereksiz deb paketleri kaldır : apt autoremove "
+	                "6" "Ubuntu deb paket hataları kaldır"
+                       	"7" "Ubuntu deb cache kaldır"
+                       	"8" "Flatpak cache kaldır"
+                       	"9" "Snap Cache kaldır"
+                       	"10" "Çıkış")
     fi
 
     local selection=$(dialog --clear \
@@ -139,7 +139,7 @@ show_menu() {
         "6") clear && check_deb_support && echo "dpgk --configure -a: " && sudo dpkg --configure -a && sleep 3 && sudo apt upgrade && sleep 3 && sudo apt update -y && sleep 3;;
         "7") clear && check_deb_support && echo "sudo apt-get clean" && sudo apt-get clean && sleep 3;;
         "8") clear && check_flatpak_installed && sudo flatpak uninstall --unused -y && sleep 3 && sudo rm -rfv /var/tmp/flatpak-cache-* && sleep 3;;
-		"9") clear && check_snap_installed && echo deleting files in "/var/lib/snapd/cache" && sudo sudo find /var/lib/snapd/cache/ -exec rm -v {} \; && sleep 3;;
+	"9") clear && check_snap_installed && echo deleting files in "/var/lib/snapd/cache" && sudo sudo find /var/lib/snapd/cache/ -exec rm -v {} \; && sleep 3;;
         "10") clear && exit ;;
     esac
 }

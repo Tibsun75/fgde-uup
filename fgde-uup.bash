@@ -136,7 +136,7 @@ show_menu() {
         "3") clear && check_snap_installed && snap refresh && sleep 3;;
         "4") clear && check_flatpak_installed && check_snap_installed && check_deb_support && sudo apt update && sleep 3 && sudo apt upgrade -y && sleep 3 && flatpak update && sleep 3 && snap refresh && sleep 3;;
         "5") clear && check_deb_support && sudo apt autoremove && sleep 3;;
-        "6") clear && check_deb_support && echo "dpgk --configure -a: " && sudo dpkg --configure -a && sleep 3 && sudo apt upgrade && sleep 3 && sudo apt update -y && sleep 3;;
+        "6") clear && check_deb_support && echo "dpkg --configure -a: " && sudo dpkg --configure -a && sleep 3 && sudo apt upgrade && sleep 3 && sudo apt update -y && sleep 3;;
         "7") clear && check_deb_support && echo "sudo apt-get clean" && sudo apt-get clean && sleep 3;;
         "8") clear && check_flatpak_installed && sudo flatpak uninstall --unused -y && sleep 3 && sudo rm -rfv /var/tmp/flatpak-cache-* && sleep 3;;
 	"9") clear && check_snap_installed && echo deleting files in "/var/lib/snapd/cache" && sudo sudo find /var/lib/snapd/cache/ -exec rm -v {} \; && sleep 3;;

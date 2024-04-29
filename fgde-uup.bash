@@ -48,7 +48,7 @@ if ! command -v dialog &> /dev/null; then
     elif [ "$answer" = "Y" ]; then
         sudo apt install dialog
     else
-        echo ".The Dialog package is required to run this script. The program will end"
+        echo "The Dialog package is required to run this script. The program will end."
         exit 1
     fi
 fi
@@ -56,7 +56,7 @@ fi
 # Funktion zur Überprüfung, ob Deb-Pakete unterstützt werden
 check_deb_support() {
     if ! command -v apt &> /dev/null; then
-        echo "Das System unterstützt keine Deb-Pakete."
+        echo "The system does not support deb packages."
         exit 1
     fi
 }
@@ -64,7 +64,7 @@ check_deb_support() {
 # Funktion zur Überprüfung, ob Flatpak installiert ist
 check_flatpak_installed() {
     if ! command -v flatpak &> /dev/null; then
-        echo "Flatpak ist auf diesem System nicht installiert."
+        echo "Flatpak is not installed on this system"
         exit 1
     fi
 }
@@ -72,7 +72,7 @@ check_flatpak_installed() {
 # Funktion zur Überprüfung, ob Snap installiert ist
 check_snap_installed() {
     if ! command -v snap &> /dev/null; then
-        echo "Snap ist auf diesem System nicht installiert."
+        echo "Snap is not installed on this system"
         exit 1
     fi
 }

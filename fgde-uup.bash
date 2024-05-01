@@ -227,22 +227,58 @@ update_all_packages() {
 
 # Funktion zum Entfernen unnötiger Deb-Pakete
 autoremove_deb_packages() {
-    clear && check_deb_support && sudo apt autoremove && sleep 2
+    if check_deb_support; then
+        clear && sudo apt autoremove && sleep 2
+    else
+        case "$LANGUAGE" in
+            "de") echo "Das System unterstützt keine Deb-Pakete." ;;
+            "en") echo "The system does not support Deb packages." ;;
+            "tr") echo "Sistem Deb paketlerini desteklemiyor." ;;
+            *) echo "The system does not support Deb packages." ;;
+        esac
+    fi
 }
 
 # Funktion zum Reparieren von Deb-Paketen
 configure_deb_packages() {
-    clear && check_deb_support && sudo dpkg --configure -a && sleep 2 && sudo apt update && sleep 2 && sudo apt upgrade  && sleep 2
+	if check_deb_support; then
+	    clear && echo "dpkg --configure -a" && sudo dpkg --configure -a && sleep 2 && sudo apt update && sleep 2 && sudo apt upgrade  && sleep 2
+	 else
+        case "$LANGUAGE" in
+            "de") echo "Das System unterstützt keine Deb-Pakete." ;;
+            "en") echo "The system does not support Deb packages." ;;
+            "tr") echo "Sistem Deb paketlerini desteklemiyor." ;;
+            *) echo "The system does not support Deb packages." ;;
+        esac
+    fi
 }
 
 # Funktion zum Leeren des Deb-Cache
 clean_deb_cache() {
-    clear && check_deb_support && sudo apt-get autoclean && sleep 2
+	if check_deb_support; then
+		clear && sudo apt-get autoclean && sleep 2
+	 else
+        case "$LANGUAGE" in
+            "de") echo "Das System unterstützt keine Deb-Pakete." ;;
+            "en") echo "The system does not support Deb packages." ;;
+            "tr") echo "Sistem Deb paketlerini desteklemiyor." ;;
+            *) echo "The system does not support Deb packages." ;;
+        esac
+    fi
 }
 
 # Funktion zum Leeren des Flatpak-Cache
 clean_flatpak_cache() {
-    clear && check_flatpak_installed && sudo flatpak uninstall --unused -y && sleep 2 && sudo rm -rfv /var/tmp/flatpak-cache-* && sleep 2
+	if check_flatpak_installed; then
+	    clear && sudo flatpak uninstall --unused -y && sleep 2 && sudo rm -rfv /var/tmp/flatpak-cache-* && sleep 2
+	else
+        case "$LANGUAGE" in
+            "de") echo "Das System unterstützt kein Flatpak." ;;
+            "en") echo "The system does not support Flatpak." ;;
+            "tr") echo "Sistem Flatpak desteklemiyor." ;;
+            *) echo "The system does not support Flatpak." ;;
+        esac
+    fi
 }
 
 # Funktion zum Leeren des Snap-Cache

@@ -194,7 +194,7 @@ update_deb_packages() {
 
 # Funktion zum Aktualisieren der Flatpaks
 update_flatpaks() {
-    clear && check_flatpak_installed && flatpak update -y && sleep 2
+    clear && check_flatpak_installed && flatpak update  && sleep 2
 }
 
 # Funktion zum Aktualisieren der Snap-Pakete
@@ -214,7 +214,7 @@ autoremove_deb_packages() {
 
 # Funktion zum Reparieren von Deb-Paketen
 configure_deb_packages() {
-    clear && check_deb_support && sudo dpkg --configure -a && sleep 2 && sudo apt upgrade && sleep 2 && sudo apt update -y && sleep 2
+    clear && check_deb_support && sudo dpkg --configure -a && sleep 2 && sudo apt update && sleep 2 && sudo apt upgrade  && sleep 2
 }
 
 # Funktion zum Leeren des Deb-Cache

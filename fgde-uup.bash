@@ -206,10 +206,18 @@ update_flatpaks() {
     fi
 }
 
-
 # Funktion zum Aktualisieren der Snap-Pakete
 update_snap_packages() {
-    clear && check_snap_installed && snap refresh && sleep 2
+    if check_snap_installed; then
+        clear && snap refresh && sleep 2
+    else
+        case "$LANGUAGE" in
+            "de") echo "Snap ist auf diesem System nicht installiert." ;;
+            "en") echo "Snap is not installed on this system." ;;
+            "tr") echo "Bu sistemde Snap kurulu değil." ;;
+            *) echo "Snap is not installed on this system." ;;
+        esac
+    fi
 }
 
 # Funktion zum Aktualisieren aller Pakete

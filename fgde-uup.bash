@@ -194,8 +194,18 @@ update_deb_packages() {
 
 # Funktion zum Aktualisieren der Flatpaks
 update_flatpaks() {
-    clear && check_flatpak_installed && flatpak update  && sleep 2
+    if check_flatpak_installed; then
+        clear && flatpak update && sleep 2
+    else
+        case "$LANGUAGE" in
+            "de") echo "Flatpak ist auf diesem System nicht installiert." ;;
+            "en") echo "Flatpak is not installed on this system." ;;
+            "tr") echo "Bu sistemde Flatpak kurulu değil." ;;
+            *) echo "Flatpak is not installed on this system." ;;
+        esac
+    fi
 }
+
 
 # Funktion zum Aktualisieren der Snap-Pakete
 update_snap_packages() {

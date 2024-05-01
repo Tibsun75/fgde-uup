@@ -33,20 +33,6 @@ change_language() {
     check_dialog_installed
 }
 
-# Funktion zum Setzen von Fehlermeldungen in der entsprechenden Sprache
-set_error_messages() {
-    if [ "$LANGUAGE" = "de" ]; then
-        DIALOG_NOT_INSTALLED="Dialog-Paket ist nicht installiert."
-        DIALOG_REQUIRED="Das Dialog-Paket wird benötigt, um dieses Skript auszuführen."
-    elif [ "$LANGUAGE" = "en" ]; then
-        DIALOG_NOT_INSTALLED="Dialog package is not installed."
-        DIALOG_REQUIRED="The Dialog package is required to run this script."
-    elif [ "$LANGUAGE" = "tr" ]; then
-        DIALOG_NOT_INSTALLED="Dialog paketi kurulu değil."
-        DIALOG_REQUIRED="Bu betiği çalıştırmak için Dialog paketi gereklidir."
-    fi
-}
-
 # Funktion zur Überprüfung, ob das Dialog-Paket installiert ist
 check_dialog_installed() {
     if ! command -v dialog &> /dev/null; then
@@ -277,9 +263,6 @@ check_snap_installed() {
         esac        
     fi
 }
-
-# Setze Fehlermeldungen in der entsprechenden Sprache
-set_error_messages
 
 # Überprüfe, ob die Funktion change_language aufgerufen werden soll
 if [ "$#" -eq 0 ]; then

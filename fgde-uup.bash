@@ -164,9 +164,9 @@ update_deb_packages() {
     clear && check_deb_support
     
     # Lokalisierte Fehlermeldungen
-    local error_msg_de="Fehler beim Aktualisieren der Paketliste. Bitte überprüfen Sie Ihre Internetverbindung oder Ihre Paketquellen."
-    local error_msg_en="Error updating package list. Please check your internet connection or your package sources."
-    local error_msg_tr="Paket listesi güncellenirken hata oluştu. Lütfen internet bağlantınızı veya paket kaynaklarınızı kontrol edin."
+    local error_msg_de="Fehler beim Aktualisieren."
+    local error_msg_en="Error during updating process."
+    local error_msg_tr="Paket listesi güncellenirken hata oluştu."
 
     # Führe 'sudo apt update' aus und überprüfe auf Fehler
     if sudo apt update; then
